@@ -1,0 +1,61 @@
+# ================= Database Credentials =================
+
+# MySQL Configuration
+MYSQL_ROOT_PASSWORD=root_password_123
+MYSQL_USER=mysql_user
+MYSQL_PASSWORD=mysql_password_123
+MYSQL_DATABASE=stroke_db
+MYSQL_HOST=mysql
+MYSQL_PORT=3306
+
+# MS SQL Server Configuration
+MSSQL_SA_PASSWORD=YourStrong!Pass123
+
+# PostgreSQL Configuration (Analytics)
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=analytics_db
+POSTGRES_USER=analytics_user
+POSTGRES_PASSWORD=analytics_pass
+
+# ================= AWS S3 Configuration =================
+
+# AWS Credentials
+AWS_ACCESS_KEY_ID=your_aws_access_key_here
+AWS_SECRET_ACCESS_KEY=your_aws_secret_key_here
+AWS_DEFAULT_REGION=us-east-1
+
+# S3 Bucket Configuration
+AWS_S3_BUCKET=your-bucket-name
+AWS_S3_ENDPOINT=https://s3.amazonaws.com
+
+# ================= Application Configuration =================
+
+# FastAPI Configuration
+PYTHONPATH=/app
+PYTHONUNBUFFERED=1
+
+# Spark Configuration
+SPARK_WORKER_MEMORY=1G
+SPARK_WORKER_CORES=1
+
+# ================= Airflow Configuration =================
+
+# Airflow Database
+AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres_airflow/airflow
+AIRFLOW__CELERY__RESULT_BACKEND=db+postgresql://airflow:airflow@postgres_airflow/airflow
+AIRFLOW__CELERY__BROKER_URL=redis://redis:6379/0
+
+# Airflow Core Settings
+AIRFLOW__CORE__LOAD_EXAMPLES=false
+AIRFLOW__CORE__LOAD_DEFAULT_CONNECTIONS=false
+AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=false
+
+# ================= Superset Configuration =================
+
+SUPERSET_SECRET_KEY=your-super-secret-key-change-this-in-production
+
+# ================= Kafka Configuration =================
+
+KAFKA_BROKER_ID=1
+KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1

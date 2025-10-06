@@ -1,0 +1,5 @@
+lowercaseOutputName: true
+lowercaseOutputLabelNames: true
+rules:
+  # This is a basic rule that will catch many standard JVM metrics
+  - pattern: ".*"
