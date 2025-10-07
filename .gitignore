@@ -1,2 +1,4 @@
 .env
 fast_api/.env
+*.swp
+*.swo
