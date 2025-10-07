@@ -16,16 +16,18 @@ curl -X PUT http://localhost:8083/connectors/csv-file-source-connector/config \
     
     "tasks.reader.class": "io.streamthoughts.kafka.connect.filepulse.fs.reader.LocalRowFileInputReader",
     
+    "filters": "ParseLine",
+    "filters.ParseLine.type": "io.streamthoughts.kafka.connect.filepulse.filter.DelimitedRowFilter",
+    "filters.ParseLine.separator": ",",
+    "filters.ParseLine.trimColumn": "true",
+    "filters.ParseLine.extractColumnName": "headers",
+    "filters.ParseLine.extractColumnIndex": "0",
+    
     "tasks.file.status.storage.class": "io.streamthoughts.kafka.connect.filepulse.state.KafkaFileObjectStateBackingStore",
     "tasks.file.status.storage.bootstrap.servers": "kafka:9092",
     "tasks.file.status.storage.topic": "connect-file-pulse-status",
     "tasks.file.status.storage.topic.partitions": "1",
     "tasks.file.status.storage.topic.replication.factor": "1",
-    
-    "file.parsing.csv.first.row.as.header": "true",
-    "file.parsing.csv.separator": ",",
-    "file.parsing.csv.ignore.empty.lines": "true",
-    "file.parsing.csv.trim.column": "true",
     
     "key.converter": "org.apache.kafka.connect.storage.StringConverter",
     "value.converter": "org.apache.kafka.connect.json.JsonConverter",

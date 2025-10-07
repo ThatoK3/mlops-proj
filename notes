@@ -1,0 +1,8 @@
+# view all topics
+docker exec mlops-proj-kafka-1 kafka-topics --list --bootstrap-server localhost:9092
+
+# view topics:
+docker run --tty --network <network_name>  confluentinc/cp-kafkacat kafkacat -b kafka:9092 -L
+docker run --tty --network <network_name> confluentinc/cp-kafkacat kafkacat -b kafka:9092 -C -K: -f '\nKey (%K bytes): %k\t\nValue (%S bytes): %s\n\Partitio
+n: %p\tOffset: %o\n--\n' -t <topic> -c 5
+
