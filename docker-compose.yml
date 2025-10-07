@@ -29,7 +29,7 @@ services:
     container_name: mssql-server
     environment:
       - ACCEPT_EULA=Y
-      - SA_PASSWORD=${MSSQL_SA_PASSWORD:-YourStrong!Pass123}
+      - SA_PASSWORD=${MSSQL_SA_PASSWORD}
       - MSSQL_PID=Developer
       - MSSQL_DATABASE=stroke_predictions_sink
     ports:
@@ -89,6 +89,8 @@ services:
       - ${PWD}/kconnect-s3-sink-jars:/kafka/connect/kconnect-s3-sink-jars
       - ${PWD}/confluentic-connect-transforms:/kafka/connect/confluentic-connect-transforms
       - ${PWD}/jmx_exporter:/kafka/connect/jmx_exporter
+      - ${PWD}/streamthoughts-filepulse-jars:/kafka/connect/streamthoughts-filepulse-jars
+      - ${PWD}/data:/data
     networks:
       - app-network
     depends_on:

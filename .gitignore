@@ -1,2 +1,2 @@
 .env
-./fast_api/.env
+fast_api/.env
