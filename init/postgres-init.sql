@@ -1,3 +1,5 @@
+-- Connect to analytics_db and create tables
+\c analytics_db
 -- Analytics cache tables for stroke predictions
 CREATE TABLE IF NOT EXISTS stroke_analytics_op_counts (
     op VARCHAR(10) PRIMARY KEY,
